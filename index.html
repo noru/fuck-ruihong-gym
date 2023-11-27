@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Fuck Gym</title>
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <img src="./background.jpg" />
+    <span id="mask">2023-11-27 14:00-16:00</span>
+  </div>
+  <input id="input" value="2023-11-27 14:00-16:00" />
+  <script>
+    let mask = document.getElementById('mask')
+    document.getElementById('input').addEventListener('input', e => {
+      mask.innerHTML = e.target.value
+    })
+  </script>
+</body>
+
+</html>

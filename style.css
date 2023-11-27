@@ -1,0 +1,26 @@
+@font-face {
+  font-family: misans;
+  src: url(./misans.ttf);
+}
+
+* {
+  font-family: 'misans';
+}
+
+#wrapper {
+  position: relative;
+}
+
+#mask {
+  display: block;
+  background: white;
+  color: #636363;
+  position: absolute;
+  top: 1213px;
+  left: 247px;
+  font-size: 39px;
+}
+
+#input {
+  width: 100%;
+}
