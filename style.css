@@ -5,9 +5,14 @@
 
 * {
   font-family: 'misans';
+  font-weight: bold;
 }
 
-#wrapper {
+.hide {
+  display: none;
+}
+
+#screenshot {
   position: relative;
 }
 
@@ -18,6 +23,15 @@
   position: absolute;
   top: 1212px;
   left: 247px;
+  font-size: 39px;
+}
+#mask2 {
+  display: block;
+  background: white;
+  color: #636363;
+  position: absolute;
+  top: 1206px;
+  left: 253px;
   font-size: 39px;
 }
 

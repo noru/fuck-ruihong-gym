@@ -4,36 +4,53 @@
 <head>
   <title>Fuck Gym</title>
   <link href="./style.css" rel="stylesheet" />
+  <script src="./helper.js"></script>
 </head>
 
 <body>
-  <div id="wrapper">
+  <div id="screenshot">
     <img src="./background.jpg" />
     <span id="mask"></span>
   </div>
+  <div id="record" class="hide">
+    <img src="./background2.jpg" />
+    <span id="mask2"></span>
+  </div>
+
   <input id="input" />
   <script>
-    let mask = document.getElementById('mask')
-    let input = document.getElementById('input')
-    let date = new Date()
-    let year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(date)
-    let month = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(date)
-    let day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(date)
-    let hour = date.getHours()
-    let range = '10:00-12:00'
-    if (hour >= 12) {
-      range = '12:00-14:00'
+    let screenshot = document.getElementById('screenshot')
+    let record = document.getElementById('record')
+    screenshot.addEventListener('click', toggle)
+    record.addEventListener('click', toggle)
+
+    function initScreenshot() {
+      let mask = document.getElementById('mask')
+      let input = document.getElementById('input')
+      input.value = mask.innerHTML = window.__getDateStr()
+      input.addEventListener('input', e => {
+        mask.innerHTML = e.target.value
+      })
     }
-    if (hour >= 14) {
-      range = '14:00-16:00'
+    function initRecord() {
+      let mask = document.getElementById('mask2')
+      let input = document.getElementById('input')
+      input.value = mask.innerHTML = window.__getDateStr()
+      input.addEventListener('input', e => {
+        mask.innerHTML = e.target.value
+      })
     }
-    if (hour >= 16) {
-      range = '16:00-18:00'
+    function toggle() {
+      if (screenshot.classList.contains('hide')) {
+        screenshot.classList.remove('hide')
+        record.classList.add('hide')
+        initScreenshot()
+      } else if (record.classList.contains('hide')) {
+        record.classList.remove('hide')
+        screenshot.classList.add('hide')
+        initRecord()
+      }
     }
-    input.value = mask.innerHTML = `${year}-${month}-${day} ${range}`
-    input.addEventListener('input', e => {
-      mask.innerHTML = e.target.value
-    })
   </script>
 </body>
 
