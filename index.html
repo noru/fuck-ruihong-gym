@@ -8,49 +8,29 @@
 </head>
 
 <body>
-  <div id="screenshot">
-    <img src="./background.jpg" />
-    <span id="mask"></span>
-  </div>
-  <div id="record" class="hide">
+  <div id="record">
     <img src="./background2.jpg" />
+
+    <span id="mask0"></span>
+    <span id="mask1"></span>
     <span id="mask2"></span>
+    <span id="mask3"></span>
   </div>
 
-  <input id="input" />
   <script>
-    let screenshot = document.getElementById('screenshot')
     let record = document.getElementById('record')
-    screenshot.addEventListener('click', toggle)
-    record.addEventListener('click', toggle)
-
-    function initScreenshot() {
-      let mask = document.getElementById('mask')
-      let input = document.getElementById('input')
-      input.value = mask.innerHTML = window.__getDateStr()
-      input.addEventListener('input', e => {
-        mask.innerHTML = e.target.value
-      })
-    }
     function initRecord() {
-      let mask = document.getElementById('mask2')
-      let input = document.getElementById('input')
-      input.value = mask.innerHTML = window.__getDateStr()
-      input.addEventListener('input', e => {
-        mask.innerHTML = e.target.value
-      })
+      let mask0 = document.getElementById('mask0')
+      let mask1 = document.getElementById('mask1')
+      let mask2 = document.getElementById('mask2')
+      let mask3 = document.getElementById('mask3')
+      let date = window.__getDateStr()
+      mask0.innerHTML = date.substr(0, 7)
+      mask1.innerHTML = mask2.innerHTML = date
+      let today = new Date().getDate()
+      mask3.innerHTML = window.__getDateStr(new Date(new Date().setDate(today === 1 ? 0 : today - 1)))
     }
-    function toggle() {
-      if (screenshot.classList.contains('hide')) {
-        screenshot.classList.remove('hide')
-        record.classList.add('hide')
-        initScreenshot()
-      } else if (record.classList.contains('hide')) {
-        record.classList.remove('hide')
-        screenshot.classList.add('hide')
-        initRecord()
-      }
-    }
+    initRecord()
   </script>
 </body>
 

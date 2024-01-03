@@ -5,27 +5,19 @@
 
 * {
   font-family: 'misans';
-  font-weight: bold;
 }
 
-.hide {
-  display: none;
-}
-
-#screenshot {
-  position: relative;
-}
-
-#mask {
+#mask0 {
   display: block;
-  background: white;
-  color: #636363;
+  background: #4c4c4c;
+  color: #151515;
   position: absolute;
-  top: 1212px;
-  left: 247px;
-  font-size: 39px;
+  font-size: 40px;
+  top: 265px;
+  left: 446px;
 }
-#mask2 {
+
+#mask1 {
   display: block;
   background: white;
   color: #636363;
@@ -33,6 +25,24 @@
   top: 1206px;
   left: 253px;
   font-size: 39px;
+}
+#mask2 {
+  display: block;
+  background: #4c4c4c;
+  color: #222;
+  position: absolute;
+  font-size: 36px;
+  top: 492px;
+  left: 199px;
+}
+#mask3 {
+  display: block;
+  background: #4c4c4c;
+  color: #222;
+  position: absolute;
+  font-size: 36px;
+  top: 778px;
+  left: 199px;
 }
 
 #input {
