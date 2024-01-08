@@ -7,13 +7,17 @@
   font-family: 'misans';
 }
 
+body {
+  margin: 0;
+}
+
 #mask0 {
   display: block;
   background: #4c4c4c;
   color: #151515;
   position: absolute;
   font-size: 40px;
-  top: 265px;
+  top: 256px;
   left: 446px;
 }
 
@@ -22,8 +26,8 @@
   background: white;
   color: #636363;
   position: absolute;
-  top: 1206px;
-  left: 253px;
+  top: 1199px;
+  left: 247px;
   font-size: 39px;
 }
 #mask2 {
@@ -32,8 +36,8 @@
   color: #222;
   position: absolute;
   font-size: 36px;
-  top: 492px;
-  left: 199px;
+  top: 483px;
+  left: 190px;
 }
 #mask3 {
   display: block;
@@ -42,7 +46,7 @@
   position: absolute;
   font-size: 36px;
   top: 778px;
-  left: 199px;
+  left: 190px;
 }
 
 #input {
